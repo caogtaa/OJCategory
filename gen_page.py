@@ -35,10 +35,15 @@ with codecs.open('README.md', 'w', 'utf-8') as output:
                 output.write('<br>\n')
             counter += 1
 
-            folder_id = (id-1) // 100 * 100;
+            folder_id = (id-1) // 100 * 100
             from_id = folder_id + 1
             to_id = folder_id + 100
 
-            output.write('[![](%s)](%s=%s)' % (icon_url, problem_prefix, id))
-            output.write('[%04d](./blob/master/%s/%d_%d/%04d.py)&nbsp;&nbsp;&nbsp;&nbsp;' % (id, oj_name, from_id, to_id, id))
+            # output.write('[![](%s)](%s=%s)' % (icon_url, problem_prefix, id))
+            output.write('[%04d](%s=%s)' % (id, problem_prefix, id))
+            # output.write('[%s](%s=%s)' % ('&#xcef;', problem_prefix, id))
+            output.write('[%s](./%s/%d_%d/%04d.py)' % ('\U0001F388', oj_name, from_id, to_id, id))
+            output.write('&nbsp;&nbsp;&nbsp;&nbsp;')
+            
+            # output.write('[%04d](./%s/%d_%d/%04d.py)&nbsp;&nbsp;&nbsp;&nbsp;' % (id, oj_name, from_id, to_id, id))
         output.write('<br>\n')
