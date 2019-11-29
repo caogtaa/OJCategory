@@ -3,10 +3,17 @@
 
 import codecs
 import csv
+import os
 
 icon_url = 'https://projecteuler.net/favicon.ico'
 problem_prefix = 'https://projecteuler.net/problem'
 oj_name = 'ProjectEuler'
+
+def get_suffix(file_path):
+    for suffix in ['.cpp', '.py', '.txt']:
+        if os.path.exists(file_path + suffix):
+            return suffix
+    return ''
 
 category_map = dict()
 with open('category.csv', 'r') as input:
@@ -36,10 +43,16 @@ with codecs.open('README.md', 'w', 'utf-8') as output:
             counter += 1
 
             folder_id = (id-1) // 100 * 100
-            from_id = folder_id + 1
-            to_id = folder_id + 100
+            folder_name = '%s_%s' % (folder_id+1, folder_id+100)
+            file_path = './%s/%s/%04d' % (oj_name, folder_name, id)
+            suffix = get_suffix(file_path)
 
-            output.write('[%s](./%s/%d_%d/%04d.py)' % ('\U0001F388', oj_name, from_id, to_id, id))
+            if suffix:
+                output.write('[%s](%s%s)' % ('\U0001F388', file_path, suffix))
+            else:
+                # file not found
+                output.write('\U00002754')
+
             output.write('[%04d](%s=%s)' % (id, problem_prefix, id))
             output.write('&nbsp;&nbsp;&nbsp;&nbsp;')
             
