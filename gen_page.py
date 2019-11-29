@@ -24,11 +24,11 @@ with open('category.csv', 'r') as input:
 # assign category with specific order
 with codecs.open('README.md', 'w', 'utf-8') as output:
     for category in category_map:
-        output.write("### %s" % category)
+        output.write("### %s\n" % category)
         counter = 0
         for id in category_map[category]:
-            if counter % 10 == 0:
-                output.write('\n')
+            if counter > 0 and counter % 10 == 0:
+                output.write('<br>\n')
             counter += 1
             output.write('[%04d](%s=%s)&nbsp;&nbsp;&nbsp;&nbsp;' % (int(id), problem_prefix, id))
-        output.write('\n')
+        output.write('<br>\n')
