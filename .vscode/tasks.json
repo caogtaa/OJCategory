@@ -14,6 +14,8 @@
                 "Debug\\",
                 "/Fd:",             // pdb file
                 "Debug\\",
+                "-I",
+                "${workspaceFolder}/misc",
                 "/FC",              // full path of source code file in diagnostics
                 "play.cpp",
                 "helper.cpp"
