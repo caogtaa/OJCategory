@@ -5,7 +5,7 @@ import codecs
 import csv
 import os
 
-icon_url = 'https://projecteuler.net/favicon.ico'
+# icon_url = 'https://projecteuler.net/favicon.ico'
 problem_prefix = 'https://projecteuler.net/problem'
 oj_name = 'ProjectEuler'
 
@@ -50,7 +50,7 @@ with codecs.open('README.md', 'w', 'utf-8') as output:
             if suffix:
                 output.write('[%s](%s%s)' % ('\U0001F388', file_path, suffix))
             else:
-                # file not found
+                # file not found, print question emoji
                 output.write('\U00002754')
 
             output.write('[%04d](%s=%s)' % (id, problem_prefix, id))

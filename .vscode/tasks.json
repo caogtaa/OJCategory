@@ -17,8 +17,8 @@
                 "-I",
                 "${workspaceFolder}/misc",
                 "/FC",              // full path of source code file in diagnostics
-                "play.cpp",
-                "helper.cpp"
+                "${file}",
+                "misc/helper.cpp"
             ],
             "group": {
                 "kind": "build",
