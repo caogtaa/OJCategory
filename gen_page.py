@@ -22,7 +22,7 @@ with open('category.csv', 'r') as input:
 
 # sort category
 # assign category with specific order
-with codecs.open('category.md', 'w', 'utf-8') as output:
+with codecs.open('README.md', 'w', 'utf-8') as output:
     for category in category_map:
         output.write("### %s" % category)
         counter = 0
