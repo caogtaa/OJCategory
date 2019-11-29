@@ -6,6 +6,7 @@ import csv
 
 icon_url = 'https://projecteuler.net/favicon.ico'
 problem_prefix = 'https://projecteuler.net/problem'
+oj_name = 'ProjectEuler'
 
 category_map = dict()
 with open('category.csv', 'r') as input:
@@ -20,15 +21,24 @@ with open('category.csv', 'r') as input:
             else:
                 category_map[category].append(row[0])
 
-# sort category
+# todo: sort category
 # assign category with specific order
 with codecs.open('README.md', 'w', 'utf-8') as output:
     for category in category_map:
         output.write("### %s\n" % category)
         counter = 0
-        for id in category_map[category]:
+        for v in category_map[category]:
+            id = int(v)
+
             if counter > 0 and counter % 10 == 0:
+                # 10 problems per line
                 output.write('<br>\n')
             counter += 1
-            output.write('[%04d](%s=%s)&nbsp;&nbsp;&nbsp;&nbsp;' % (int(id), problem_prefix, id))
+
+            folder_id = (id-1) // 100 * 100;
+            from_id = folder_id + 1
+            to_id = folder_id + 100
+
+            output.write('[![](%s)](%s=%s)' % (icon_url, problem_prefix, id))
+            output.write('[%04d](./blob/master/%s/%d_%d/%04d.py)&nbsp;&nbsp;&nbsp;&nbsp;' % (id, oj_name, from_id, to_id, id))
         output.write('<br>\n')
