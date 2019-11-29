@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "msvc build",
+            "type": "shell",
+            "command": "cl.exe",
+            "args": [
+                "/EHsc",
+                "/Zi",
+                "/Fe:",             // executable
+                "Debug\\",
+                "/Fo:",             // obj file
+                "Debug\\",
+                "/Fd:",             // pdb file
+                "Debug\\",
+                "/FC",              // full path of source code file in diagnostics
+                "play.cpp",
+                "helper.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
+
+/* args template from vs2019 project
+refer to 
+https://docs.microsoft.com/en-us/cpp/build/reference/output-file-f-options?view=vs-2019
+
+/JMC /permissive- /GS /analyze- /W3 
+/Zc:wchar_t /ZI /Gm- /Od /sdl 
+/Fd"Debug\vc142.pdb" /Zc:inline /fp:precise /D "_MBCS" 
+/errorReport:prompt /WX- /Zc:forScope /RTC1 /Gd /Oy- /MDd 
+/FC /Fa"Debug\" /EHsc /nologo /Fo"Debug\" /Fp"Debug\play_ground.pch" /diagnostics:column 
+
+*/
