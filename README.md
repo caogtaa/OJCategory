@@ -49,3 +49,5 @@
 [🎈](./ProjectEuler/101_200/0101.cpp)[0101](https://projecteuler.net/problem=101)&nbsp;&nbsp;&nbsp;&nbsp;<br>
 ### 拉格朗日插值
 [🎈](./ProjectEuler/101_200/0101.cpp)[0101](https://projecteuler.net/problem=101)&nbsp;&nbsp;&nbsp;&nbsp;<br>
+### 计算几何
+[🎈](./ProjectEuler/101_200/0102.py)[0102](https://projecteuler.net/problem=102)&nbsp;&nbsp;&nbsp;&nbsp;<br>
