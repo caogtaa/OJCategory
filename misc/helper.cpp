@@ -234,8 +234,8 @@ int Util::digitFactorialSum(int n) {
     return result;
 }
 
-int Util::gcd(int a, int b) {
-    int tmp;
+long long Util::gcd(long long a, long long b) {
+    long long tmp;
     while (b) {
         tmp = a;
         a = b;
@@ -281,7 +281,7 @@ int Util::getNumber(const vector<int>& digits) {
     return result;
 }
 
-int Util::lcm(int a, int b) {
+long long Util::lcm(long long a, long long b) {
     return a / gcd(a, b) * b;
 }
 
@@ -440,6 +440,29 @@ vector<int> Util::factorSums(int n)
 
 int Util::lowBit(int n) {
     return n & (n^(n-1));
+}
+
+long long Util::lagrangeInterpolation(const vector<long long>& x, const vector<long long>& y, int n, int k) {
+    // assert x.size() == y.size() >= n
+    long long result = 0;
+    for (int i = 0; i < n; ++i) {
+        long long fxi = 1;
+        for (int j = 0; j < n; ++j) {
+            if (j == i)
+                continue;
+            fxi *= k-x[j];
+        }
+
+        for (int j = 0; j < n; ++j) {
+            if (j == i)
+                continue;
+            fxi /= x[i] - x[j];
+        }
+
+        result += fxi * y[i];
+    }
+
+    return result;
 }
 
 // implementation of SpecialNumber

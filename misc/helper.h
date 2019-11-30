@@ -69,10 +69,10 @@ public:
     static int digitFactorialSum(int n);
 
     // greatest common divisor
-    static int gcd(int a, int b);
+    static long long gcd(long long a, long long b);
 
     // least common multiplier
-    static int lcm(int a, int b);
+    static long long lcm(long long a, long long b);
 
     // return (n^e) % mod for large result
     static unsigned long long powMod(unsigned long long n, unsigned long long e, unsigned long long mod);
@@ -92,6 +92,13 @@ public:
     static std::vector<int> factorSums(int n);
 
     static int lowBit(int n);
+
+    // y = F(x)
+    // use Lagrange Interpolation to construct Q which fit top n items from y = F(x)
+    // then return Q(k)
+    // note: make sure pow(xi, len(x)) never overflow a long long variant in worst case, otherwise use BigNum library instead
+    // referrence: https://www.zhihu.com/question/58333118
+    static long long lagrangeInterpolation(const std::vector<long long>& x, const std::vector<long long>& y, int n, int k);
 };
 
 class SpecialNumber {
