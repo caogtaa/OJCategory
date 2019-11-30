@@ -45,3 +45,7 @@
 [🎈](./ProjectEuler/1_100/0096.cpp)[0096](https://projecteuler.net/problem=96)&nbsp;&nbsp;&nbsp;&nbsp;<br>
 ### 快速求幂
 [🎈](./ProjectEuler/1_100/0097.py)[0097](https://projecteuler.net/problem=97)&nbsp;&nbsp;&nbsp;&nbsp;<br>
+### 高斯消元
+[🎈](./ProjectEuler/101_200/0101.cpp)[0101](https://projecteuler.net/problem=101)&nbsp;&nbsp;&nbsp;&nbsp;<br>
+### 拉格朗日插值
+[🎈](./ProjectEuler/101_200/0101.cpp)[0101](https://projecteuler.net/problem=101)&nbsp;&nbsp;&nbsp;&nbsp;<br>
