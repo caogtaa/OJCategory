@@ -54,12 +54,12 @@ def write_to_readme(oj_name, oj_config, output):
     # assign category with specific order
     for category in category_map:
         output.write("#### %s\n" % category)
-        # counter = 0
+        counter = 0
         for id in category_map[category]:
-            # if counter > 0 and counter % 10 == 0:
-            #     # 10 problems per line
-            #     output.write('<br>\n')
-            # counter += 1
+            if counter > 0 and counter % 10 == 0:
+                # 10 problems per line
+                output.write('<br>\n')
+            counter += 1
 
             rec = records[id]
             file_path_candidate = file_path_rule(rec)
