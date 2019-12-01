@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>Evernote Export</title>
+  <basefont face="微软雅黑" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="YXBJ Windows/600986 (zh-CN, DDL); Windows/10.0.0 (Win64); EDAMVersion=V2;"/>
+  <meta name="application-data:2525275" content="10389191/s94/2d2b8e1d-a85d-414b-869e-f9db66cdf169/www.evernote.com"/>
+  <style>
+    body, td {
+      font-family: 微软雅黑;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="808"/>
+
+<div>
+<span>
+<div><a href="http://codeforces.com/contest/733/"></a><a href="http://codeforces.com/contest/733/"></a><a href="http://codeforces.com/contest/733/">http://codeforces.com/contest/733/</a></div>
+<div><a href="http://codeforces.com/blog/entry/48060"></a><a href="http://codeforces.com/blog/entry/48060">http://codeforces.com/blog/entry/48060</a></div>
+<div><br/></div>
+<div><b>［A题］</b></div>
+<div>题意：有一个串S和一只蚱蜢，蚱蜢每次跳跃只会落到元音字母(A, E, I, O, U, Y)上，求蚱蜢想从最左到达最右最少需要多大的跳跃能力</div>
+<div>思路：简单题，一次扫描求两个相邻元音字母的最大间隔即可，但是要注意这里Y也当作元音，失误被hack一次</div>
+<div><a href="codeforces 733 Div 2解题报告  (E, F未完成)_files/CF_733_div2_A.cpp"><img src="codeforces 733 Div 2解题报告  (E, F未完成)_files/a8e43384b4147e5e2dcb3812637a0042.png" alt="CF_733_div2_A.cpp"></a></div>
+<div><b>［B题］</b></div>
+<div>题意：阅兵仪式上士兵们排成方阵走路，方阵分N列。</div>
+<div>士兵们有些先迈左脚（数量L），有些先迈右脚（数量R）。beauty值＝|L-R|。</div>
+<div>允许做一次操作将某列的士兵切换起始脚步，即先迈左脚的变成先迈右脚，先迈右脚的变成先迈左脚，在哪一列做这样的切换能使得beauty值最大化</div>
+<div>输入：每一列里先迈左脚的士兵数和先迈右脚的士兵数 (li, ri)</div>
+<div>思路：简单题，先求得总的beauty值，然后逐行尝试进行切换记录能得到较大beauty值的列</div>
+<div><a href="codeforces 733 Div 2解题报告  (E, F未完成)_files/CF_733_div2_B.cpp"><img src="codeforces 733 Div 2解题报告  (E, F未完成)_files/539ff958e54d579a98114bf63d4b6c24.png" alt="CF_733_div2_B.cpp"></a></div>
+<div><b>［C题］</b></div>
+<div>题意：N个怪物排成一排行程序列A，每个怪物有体重值wi，体重比较大的怪物可以吃掉排在自己相邻位置的体重比自己小的怪物，吃掉之后自身重量增加，增加值为被吃掉的怪物重量。</div>
+<div>给出一个序列B，求是否有可能通过吃怪物使序列A变成序列B？如果可以，吃怪物的顺序是怎样的</div>
+<div>输入：序列A，N个怪物的重量；序列B，K个怪物的重量，N &lt;= 500</div>
+<div>思路：怪物只能吃邻居，B序列里的怪物是A序列中一个区间内的怪物重量相加。</div>
+<div>判断是否转换方案考虑两点</div>
+<div>1.是否B序列中的怪物都是A序列中一个连续区间怪物的重量只和？</div>
+<div>2.由于只能吃掉相邻怪物，如果一个区间内所有的怪物重量相等，大家不能互相吃。只要有一个重量不一样，就必然有可行方案。</div>
+<div>这两个问题都可以通过扫描来求解</div>
+<div>对于第1点我是通过记录怪物的重量和sum[]做二分查找B的元素来求解，要注意B的最后一个元素必须能对应到sum[]的最后一个元素，否则A、B两个序列的总重就不匹配。我遗漏掉了这点导致system test case 13 failed</div>
+<div>求得是否有解之后就要还原吃怪步骤了，在第1点中需要顺便求得B中每个元素对应A中的区间。</div>
+<div>对于每个区间，我们找到区间中的最大值，因为可以让它吃掉所有其它怪物。如果有多个怪物都是最大重量，取左右怪物至少有一个比它轻的。还原过程就是如果左边的怪物比它轻，先吃掉所有左边的再吃右边；否则先吃掉所有右边的再吃左边。</div>
+<div><a href="codeforces 733 Div 2解题报告  (E, F未完成)_files/CF_733_div2_C.cpp"><img src="codeforces 733 Div 2解题报告  (E, F未完成)_files/771a4863d003079ab3097e49fde43d8e.png" alt="CF_733_div2_C.cpp"></a></div>
+<div><b>［D题］</b></div>
+<div>题意：Zahar有N个立方体，想要展示给Kostya看。Zahar想展示尽量大的立方体，评判标准是立方体的内切球最大（内切球半径＝立方体最短边长/2）。Zahar可以那最多两个立方体做拼接，使其内切球变大后展示，也可以只拿单独一个立方体。</div>
+<div>输入：N个立方体的3边长度ai, bi, ci</div>
+<div>思路：立方体拼接必须使它们其中一面有完全相同的长宽（我们暂且认为这个面是底面），拼接后它们的高相加有可能会增加内切球大小。</div>
+<div>对于底面相同的多个立方体，我们肯定是选择高尽量大的。</div>
+<div>在获取每个立方体尺寸的过程中，我们先考虑如果单独展示这个立方体，是否能更新result值。</div>
+<div>然后比较是否有可以和它拼接的其它立方体，同底面的立方体我们只保留高最大的2个，并和其下标一起记录。如果有我们尝试拼接它们，并得到更新后的result值。注意每个立方体可以通过旋转得到最多3种不同底面。</div>
+<div>本题中我用了unordred_map&lt;long long, tuple&lt;int, int, int, int&gt;&gt;结构</div>
+<div>key是long long型，通过 a &lt;&lt; 32 + b来得到，a, b即底面的两边，需要保证a &lt;= b</div>
+<div>tuple结构保存了同底面下高最大的两个立方体高度和其下标</div>
+<div>在case 38 TLE了，后来改成map结构反而通过了</div>
+<div><a href="codeforces 733 Div 2解题报告  (E, F未完成)_files/CF_733_div2_D.cpp"><img src="codeforces 733 Div 2解题报告  (E, F未完成)_files/9de404f0f779c533626d3d0f19ecf3c5.png" alt="CF_733_div2_D.cpp"></a></div>
+<div>［E题］</div>
+<div><br/></div>
+<div>［F题］</div>
+<div><br/></div>
+<div><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">// Problem F,</span> <span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">看似最小生成树，边排序规则：</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures"><br/></span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">//</span> <span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">如果</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">w</span><span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">相同，取</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">c</span><span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">较小的一个</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures"><br/></span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">// w</span><span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">很大，</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">c</span><span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">很小，根据钱</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">S</span><span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">减小</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">w?</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures"><br/>
+<br/></span></div>
+<div><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">// Problem E,</span> <span style="font: 11.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures; color: #008f00">梯子上下走，每次离开梯子，梯子的方向发生变化，求每个梯子上到梦醒的时间，如果永远醒不了就输出－</span><span style="font: 11.0px Menlo; font-variant-ligatures: no-common-ligatures; color: #008f00">1</span></div>
+<div><br/></div>
+</span>
+</div></body></html> 
