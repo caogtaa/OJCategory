@@ -35,7 +35,8 @@ def write_to_readme(oj_name, oj_config, output):
     
     records = dict()
     category_map = dict()
-    with open('./%s/category.csv' % oj_name, 'r') as input:
+    csv_path = './%s/category.csv' % oj_name
+    with open(csv_path, 'r') as input:
         reader = csv.DictReader(input, delimiter=',')
         for row in reader:
             records[row['id']] = row
@@ -50,10 +51,11 @@ def write_to_readme(oj_name, oj_config, output):
                     else:
                         category_map[category].append(row['id'])
 
+    output.write('[表格](%s)\n' % csv_path)
     # todo: sort category
     # assign category with specific order
     for category in category_map:
-        output.write("#### %s\n" % category)
+        output.write('#### %s\n' % category)
         counter = 0
         for id in category_map[category]:
             if counter > 0 and counter % 10 == 0:
