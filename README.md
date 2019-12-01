@@ -84,7 +84,7 @@
 #### 最近公共祖先
 ❔[delivery](https://www.hackerrank.com/contests/walmart-codesprint-algo/challenges/delivery)&nbsp;&nbsp;&nbsp;&nbsp;<br>
 #### 快速求幂
-[🎈](./HackerRank/walmart-codesprint-algo/HR_Interesting_Fibonacci_Sum.cpp)[fibonacci-sum-1](https://www.hackerrank.com/contests/walmart-codesprint-algo/challenges/fibonacci-sum-1)&nbsp;&nbsp;&nbsp;&nbsp;❔[modified-fibonacci-1](https://www.hackerrank.com/contests/sears-dots-arrows/challenges/modified-fibonacci-1)&nbsp;&nbsp;&nbsp;&nbsp;<br>
+[🎈](./HackerRank/walmart-codesprint-algo/HR_Interesting_Fibonacci_Sum.cpp)[fibonacci-sum-1](https://www.hackerrank.com/contests/walmart-codesprint-algo/challenges/fibonacci-sum-1)&nbsp;&nbsp;&nbsp;&nbsp;[🎈](./HackerRank/sears-dots-arrows/Modified_Fibonacci_Number.cpp)[modified-fibonacci-1](https://www.hackerrank.com/contests/sears-dots-arrows/challenges/modified-fibonacci-1)&nbsp;&nbsp;&nbsp;&nbsp;<br>
 #### 分治
 [🎈](./HackerRank/HR_Nikita_And_The_Game.cpp)[array-splitting](https://www.hackerrank.com/challenges/array-splitting/problem)&nbsp;&nbsp;&nbsp;&nbsp;<br>
 #### 离线算法
