@@ -45,7 +45,7 @@ def write_to_readme(oj_name, oj_config, output):
     # todo: sort category
     # assign category with specific order
     for category in category_map:
-        output.write("### %s\n" % category)
+        output.write("#### %s\n" % category)
         counter = 0
         for id in category_map[category]:
             if counter > 0 and counter % 10 == 0:
@@ -123,12 +123,12 @@ def main():
         for name in oj_names:
             # write header
             headers = []
-            for name_anchor in oj_names:
-                if name_anchor == name:
-                    headers.append('**%s**' % name_anchor)
+            for other_name in oj_names:
+                if other_name == name:
+                    headers.append('**%s**' % name)
                 else:
-                    headers.append('[%s](#%s)' % (name_anchor, name_anchor.lower()))
-            output.write('| %s |\n' % ' | '.join(headers))
+                    headers.append('[%s](#%s)' % (other_name, other_name.lower()))
+            output.write('<a id="%s"></a>| %s |\n' % (name.lower() ,' | '.join(headers)))
             write_to_readme(name, get_oj_config(name), output)
 
 if __name__ == '__main__':
