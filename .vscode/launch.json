@@ -16,7 +16,7 @@
             "program": "${workspaceFolder}/Debug/${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false
         },
@@ -27,7 +27,7 @@
             "program": "${workspaceFolder}/Debug/${fileBasenameNoExtension}.out",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "lldb",

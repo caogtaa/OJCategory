@@ -19,7 +19,7 @@
                     "${workspaceFolder}/misc",
                     "/FC",              // full path of source code file in diagnostics
                     "${file}",
-                    "misc/helper.cpp"
+                    "misc/*.cpp"
                 ]
             },
             "osx": {
@@ -33,7 +33,7 @@
                     "-I",
                     "${workspaceFolder}/misc",
                     "${file}",
-                    "misc/helper.cpp"
+                    "misc/*.cpp"
                 ]
             },
 

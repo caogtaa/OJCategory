@@ -11,6 +11,9 @@
         "algorithm": "cpp",
         "xutility": "cpp",
         "xhash": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "string": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp"
     }
 }
