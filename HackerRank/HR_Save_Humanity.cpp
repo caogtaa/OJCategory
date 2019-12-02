@@ -3,7 +3,6 @@
 //  testZAlgo
 //
 //  Created by tangtai on 10/19/16.
-//  Copyright © 2016 Alibaba-inc. All rights reserved.
 //
 
 // Z Algorithm
