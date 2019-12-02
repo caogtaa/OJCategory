@@ -55,7 +55,7 @@ public:
     // space: O(d) in worst case
     static int fractionCycleLength(int d);
 
-    static int digitCount(int n);
+    static int digitCount(long long n);
 
     // kth digit of number, index k start from 0
     static int kthDigit(int n, int k);
@@ -109,7 +109,7 @@ public:
     // from ProjectEuler 0032
     static std::vector<std::tuple<int,int,int>> pandigitalProducts();
 
-    static bool isPandigital(int n);
+    static bool isPandigital(long long n);
 
     // from ProjectEuler 0041
     static int largestNPandigitalPrime();
@@ -119,6 +119,9 @@ public:
     static bool isTriangleNumber(long long n);
 
     static bool isSquareNumber(long long n);
+
+    // get top k digits of F(n)
+    static long long topKDigitsOfFibonacciN(int k, int n);
 };
 
 class SuDokuHelper {

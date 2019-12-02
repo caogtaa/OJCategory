@@ -187,7 +187,7 @@ int Util::fractionCycleLength(int d) {
     return digit - appear[rest];
 }
 
-int Util::digitCount(int n) {
+int Util::digitCount(long long n) {
     if (n == 0)
         return 1;
 
@@ -482,7 +482,7 @@ vector<tuple<int,int,int>> SpecialNumber::pandigitalProducts() {
     };
 }
 
-bool SpecialNumber::isPandigital(int n) {
+bool SpecialNumber::isPandigital(long long n) {
     int digitCount = Util::digitCount(n);
     int d;
     vector<bool> appear(digitCount+1);
@@ -519,6 +519,19 @@ bool SpecialNumber::isTriangleNumber(long long n) {
 bool SpecialNumber::isSquareNumber(long long n) {
     long long y = (long long)sqrt(n);
     return y * y == n;
+}
+
+long long SpecialNumber::topKDigitsOfFibonacciN(int k, int n) {
+    // https://www.yuque.com/caomou/mgxqtg/tihngp
+    static double sqrt5 = sqrt(5.0);
+    static double phi = (sqrt5 + 1) / 2;
+    static double log10phi = log10(phi);
+    static double log10sqrt5 = log10(sqrt5);
+
+    double exp = log10phi * n - log10sqrt5 - 
+        (int)(log10phi * n - log10sqrt5 + 1) + k;
+
+    return (long long)pow(10.0, exp);
 }
 
 // implementation of SuDokuHelper
