@@ -2,24 +2,41 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "msvc build",
+            "label": "build",
             "type": "shell",
-            "command": "cl.exe",
-            "args": [
-                "/EHsc",
-                "/Zi",
-                "/Fe:",             // executable
-                "Debug\\",
-                "/Fo:",             // obj file
-                "Debug\\",
-                "/Fd:",             // pdb file
-                "Debug\\",
-                "-I",
-                "${workspaceFolder}/misc",
-                "/FC",              // full path of source code file in diagnostics
-                "${file}",
-                "misc/helper.cpp"
-            ],
+            "windows": {
+                "command": "cl.exe",
+                "args": [
+                    "/EHsc",
+                    "/Zi",
+                    "/Fe:",             // executable
+                    "Debug\\",
+                    "/Fo:",             // obj file
+                    "Debug\\",
+                    "/Fd:",             // pdb file
+                    "Debug\\",
+                    "-I",
+                    "${workspaceFolder}/misc",
+                    "/FC",              // full path of source code file in diagnostics
+                    "${file}",
+                    "misc/helper.cpp"
+                ]
+            },
+            "osx": {
+                "command": "clang++",
+                "args": [
+                    "-std=c++17",
+                    "-stdlib=libc++",
+                    "-o",
+                    "Debug/${fileBasenameNoExtension}.out",
+                    "--debug",
+                    "-I",
+                    "${workspaceFolder}/misc",
+                    "${file}",
+                    "misc/helper.cpp"
+                ]
+            },
+
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -28,24 +45,6 @@
                 "reveal": "always"
             },
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "Clang build",
-            "type": "shell",
-            "command": "clang++",
-            "args": [
-                "-std=c++17",
-                "-stdlib=libc++",
-                "${file}",
-                "-o",
-                "Debug/${fileBasenameNoExtension}.out",
-                "--debug"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": []
         }
     ]
 }
