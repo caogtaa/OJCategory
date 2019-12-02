@@ -26,7 +26,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/${fileBasenameNoExtension}.out",
             "args": [],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,

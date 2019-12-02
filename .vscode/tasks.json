@@ -38,13 +38,14 @@
                 "-stdlib=libc++",
                 "${file}",
                 "-o",
-                "${fileBasenameNoExtension}.out",
+                "Debug/${fileBasenameNoExtension}.out",
                 "--debug"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         }
     ]
 }
