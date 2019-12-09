@@ -103,3 +103,4 @@ id,title,contest,hint,category_1,category_2,category_3
 102,,,凸多边形包含点判定,计算几何,,
 104,,,,数论分析,暴力,
 107,,,,最小生成树,,
+109,,,,暴力,,
