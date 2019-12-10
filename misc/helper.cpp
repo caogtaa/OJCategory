@@ -235,6 +235,16 @@ int Util::digitFactorialSum(int n) {
     return result;
 }
 
+long long Util::digitSum(long long n) {
+    long long result = 0;
+    while (n) {
+        result += n % 10;
+        n /= 10;
+    }
+
+    return result;
+}
+
 long long Util::gcd(long long a, long long b) {
     long long tmp;
     while (b) {

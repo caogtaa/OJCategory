@@ -68,6 +68,8 @@ public:
     // e.g. F(145) = 1! + 4! + 5!
     static int digitFactorialSum(int n);
 
+    static long long digitSum(long long n);
+
     // greatest common divisor
     static long long gcd(long long a, long long b);
 
