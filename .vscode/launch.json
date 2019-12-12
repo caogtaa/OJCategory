@@ -20,22 +20,32 @@
             "environment": [],
             "externalConsole": false
         },
+        // {
+        //     "name": "(lldb) Launch",
+        //     "type": "cppdbg",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/Debug/${fileBasenameNoExtension}.out",
+        //     "args": [],
+        //     "stopAtEntry": false,
+        //     "cwd": "${fileDirname}",
+        //     "environment": [],
+        //     "externalConsole": false,
+        //     "MIMode": "lldb",
+        //     "logging": {
+        //       "trace": true,
+        //       "traceResponse": true,
+        //       "engineLogging": true
+        //     }
+        // }
+
+        // install following plugin for cpp stl debug (vector::size() == 0 problem)
+        // https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
         {
             "name": "(lldb) Launch",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/Debug/${fileBasenameNoExtension}.out",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "logging": {
-              "trace": true,
-              "traceResponse": true,
-              "engineLogging": true
-            }
+            "args": []
         }
     ]
 }
