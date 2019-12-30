@@ -49,6 +49,21 @@ void PrimeHelper::initPhi(int n) {
     }
 }
 
+vector<int> PrimeHelper::getRadicals(int n) {
+    vector<int> radicals(n+1);
+    fill(radicals.begin()+1, radicals.end(), 1);    // rad(0) = 0
+
+    auto primes = getPrimes(2, n);
+    int x;
+    for (auto p : primes) {
+        for (x = p; x <= n; x += p) {
+            radicals[x] *= p;
+        }
+    }
+
+    return radicals;
+}
+
 bool PrimeHelper::_millerRabinTest(long long a, long long n) {
     if (n == 2)
         return true;

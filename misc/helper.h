@@ -26,6 +26,11 @@ public:
         return _phi[n];
     }
 
+    // radical of number x is the product of the distinct prime factors of x
+    // use sieve method
+    // get radicals of number in rang [0, n]
+    std::vector<int> getRadicals(int n);
+
     // e.g. 13 and its rotation 31 are both prime
     bool isCircularPrime(int p);
 
