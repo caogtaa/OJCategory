@@ -15,15 +15,11 @@ public:
 		long long pn;
 		long long sum;
 		long long lmt = (long long)1e10;
-		for (int i = 0; i < primes.size(); ++i) {
+		for (int i = 0; i < primes.size(); i += 2) {
 			n = i+1;
 			pn = primes[i];
-			if (n & 1)
-				sum = pn * n * 2;
-			else
-				sum = 2;
-
-			if (sum % (pn * pn) > lmt)
+			sum = pn * n * 2;
+			if (sum > lmt)
 				return n;
 		}
 
